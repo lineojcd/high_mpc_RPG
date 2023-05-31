@@ -44,7 +44,15 @@ Please find a list of demonstrations in [here](docs/gifs/README.md) and in the v
 
 [![Method](docs/figures/image.png)](https://youtu.be/Qei7oGiEIxY)
 
-
+### Req
+Install ffmpeg
+```
+conda install -c conda-forge ffmpeg
+```
+Comple the c file for 64 bit arch
+```
+gcc -shared -o mpc_v1.so mpc_v1.c
+```
 ### Installation
 
 Clone the repo

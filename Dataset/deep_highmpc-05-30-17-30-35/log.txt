@@ -1,0 +1,15 @@
+Logging to C:\Users\EndUser\Documents\high_mpc\Dataset\deep_highmpc-05-30-17-30-35
+***********************Log & Store Hyper-parameters***********************
+actor params
+{'hidden_units': [32, 32], 'learning_rate': 0.0001, 'activation': 'relu', 'train_epoch': 1000, 'batch_size': 128}
+training params
+{'max_samples': 5000, 'max_wml_iter': 15, 'beta0': 3.0, 'n_samples': 15}
+***************************************************************************
+********** Sample 0 ************
+---------- Wml_iter 0 ----------
+---------- Reward -10.483389 ----------
+---------- Pass index 49 ----------
+********** Sample 0 ************
+---------- Wml_iter 1 ----------
+---------- Reward -10.140786 ----------
+---------- Pass index 49 ----------
