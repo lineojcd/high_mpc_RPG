@@ -82,7 +82,7 @@ def main():
     if args.save_video:
         writer = animation.writers["ffmpeg"]
         writer = writer(fps=10, metadata=dict(artist="Me"), bitrate=1800)
-        ani.save("MPC_1.mp4", writer=writer)
+        ani.save("MPC_4.mp4", writer=writer)
 
     # plt.tight_layout()
     # plt.show()

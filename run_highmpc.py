@@ -47,7 +47,7 @@ def main():
     env = DynamicGap(high_mpc, plan_T, plan_dt)
 
     #
-    U.set_global_seed(args.seed)
+    # U.set_global_seed(args.seed)
 
     #
     wml_params = dict(

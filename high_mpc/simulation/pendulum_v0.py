@@ -43,7 +43,7 @@ class Pendulum_v0(object):
 
         # initial state
         self._theta_box = np.array([-0.8, 0.8]) * np.pi
-        self._dot_theta_box = np.array([-0.1, 0.1]) * np.pi
+        self._dot_theta_box = np.array([-0.1, 1]) * np.pi
 
         # self._theta_box = np.array([0.5, 0.5]) * self._pi
         # self._dot_theta_box = np.array([-0.0, 0.0]) * self._pi
@@ -87,6 +87,8 @@ class Pendulum_v0(object):
             self._state[kTheta] = np.random.uniform(
                 low=self._theta_box[0], high=self._theta_box[1]
             )
+            # self._state[kTheta] = 0
+        # self._state[kDotTheta] = 0
         self._state[kDotTheta] = np.random.uniform(
             low=self._dot_theta_box[0], high=self._dot_theta_box[1]
         )
@@ -146,7 +148,7 @@ class Pendulum_v0(object):
         self,
     ):
         pos = np.zeros(shape=3)
-        pos[0] = self.pivot_point[0]
+        pos[0] = self.pivot_point[0] + np.sin(self._t * 2 * np.pi)
         pos[1:] = self._to_planar_coordinates(
             self.pivot_point, l=self.length, theta=self._state[kTheta]
         )
@@ -156,7 +158,7 @@ class Pendulum_v0(object):
         self,
     ):
         vel = np.zeros(shape=3)
-        vel[0] = 0.0
+        vel[0] = 2 * np.pi * np.cos(self._t * 2 * np.pi)
         vel[1] = self.length * self._state[kDotTheta] * np.cos(self._state[kTheta])
         vel[2] = self.length * self._state[kDotTheta] * np.sin(self._state[kTheta])
         return vel
@@ -222,7 +224,7 @@ class Pendulum_v0(object):
             self.pivot_point, self.length4, theta + self.delta_theta4
         )
         #
-        x = self.pivot_point[0]
+        x = self.pivot_point[0] + np.sin(self._t * 2 * np.pi)
         corners_3d = [[x, y1, z1], [x, y2, z2], [x, y3, z3], [x, y4, z4]]
         return corners_3d
 

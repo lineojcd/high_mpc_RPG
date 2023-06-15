@@ -35,7 +35,7 @@ class DynamicGap(object):
         self.quad_sT = self.goal_point.tolist() + [1.0, 0.0, 0.0, 0.0] + [0.0, 0.0, 0.0]
 
         # simulation parameters ....
-        self.sim_T = 3.0  # Episode length, seconds
+        self.sim_T = 2.0  # Episode length, seconds
         self.sim_dt = 0.02  # simulation time step
         self.max_episode_steps = int(self.sim_T / self.sim_dt)
         # Simulators, a quadrotor and a pendulum
